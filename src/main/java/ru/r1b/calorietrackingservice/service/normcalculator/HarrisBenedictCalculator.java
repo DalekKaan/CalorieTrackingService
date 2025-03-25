@@ -1,5 +1,6 @@
 package ru.r1b.calorietrackingservice.service.normcalculator;
 
+import org.springframework.stereotype.Service;
 import ru.r1b.calorietrackingservice.enumerate.Gender;
 import ru.r1b.calorietrackingservice.model.User;
 import ru.r1b.calorietrackingservice.service.UserService;
@@ -7,6 +8,7 @@ import ru.r1b.calorietrackingservice.service.UserService;
 /**
  * Harris-Benedict calorie calculator
  */
+@Service
 public class HarrisBenedictCalculator implements Calculator {
     private final UserService userService;
 

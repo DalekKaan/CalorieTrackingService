@@ -1,11 +1,13 @@
 package ru.r1b.calorietrackingservice.repository;
 
+import org.springframework.stereotype.Repository;
 import ru.r1b.calorietrackingservice.model.DataModel;
 
 import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
+@Repository
 public class EatingRepository implements DataRepository {
     @Override
     public DataModel getOne(UUID id) {
