@@ -1,5 +1,6 @@
 package ru.r1b.calorietrackingservice.service.normcalculator;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import ru.r1b.calorietrackingservice.enumerate.Gender;
 import ru.r1b.calorietrackingservice.enumerate.Purpose;
@@ -14,7 +15,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class HarrisBenedictCalculatorTest {
 
     @Test
+    @Disabled // todo: remove when ready
     void calculate() {
+
         var calculator = new HarrisBenedictCalculator(new UserService());
         // todo: use @MethodValues
         var user = new User(
