@@ -3,6 +3,7 @@ package ru.r1b.calorietrackingservice.model;
 import ru.r1b.calorietrackingservice.enumerate.Gender;
 import ru.r1b.calorietrackingservice.enumerate.Purpose;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.UUID;
 
@@ -10,11 +11,21 @@ public class User implements DataModel {
     private UUID id;
     private String name;
     private String email;
-    private Date dayOfBorn;
+    private LocalDate dayOfBorn;
     private Gender gender;
     private int weight;
     private int height;
     private Purpose purpose;
+
+    public User(String name, String email, LocalDate dayOfBorn, Gender gender, int weight, int height, Purpose purpose) {
+        this.name = name;
+        this.email = email;
+        this.dayOfBorn = dayOfBorn;
+        this.gender = gender;
+        this.weight = weight;
+        this.height = height;
+        this.purpose = purpose;
+    }
 
     @Override
     public UUID getId() {
@@ -29,7 +40,7 @@ public class User implements DataModel {
         return email;
     }
 
-    public Date getDayOfBorn() {
+    public LocalDate getDayOfBorn() {
         return dayOfBorn;
     }
 
