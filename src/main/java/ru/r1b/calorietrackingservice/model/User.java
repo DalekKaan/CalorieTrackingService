@@ -1,5 +1,6 @@
 package ru.r1b.calorietrackingservice.model;
 
+import ru.r1b.calorietrackingservice.enumerate.Gender;
 import ru.r1b.calorietrackingservice.enumerate.Purpose;
 
 import java.util.Date;
@@ -10,6 +11,7 @@ public class User implements DataModel {
     private String name;
     private String email;
     private Date dayOfBorn;
+    private Gender gender;
     private int weight;
     private int height;
     private Purpose purpose;
@@ -29,6 +31,10 @@ public class User implements DataModel {
 
     public Date getDayOfBorn() {
         return dayOfBorn;
+    }
+
+    public Gender getGender() {
+        return gender;
     }
 
     public int getWeight() {
