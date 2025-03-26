@@ -18,9 +18,6 @@ public class Dish {
     private int fats;
     private int carbs;
 
-    public Dish() {
-    }
-
     public UUID getId() {
         return id;
     }

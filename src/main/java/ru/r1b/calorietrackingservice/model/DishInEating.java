@@ -12,4 +12,12 @@ public class DishInEating {
     @ManyToOne
     @Id
     private Eating eating;
+
+    public Dish getDish() {
+        return dish;
+    }
+
+    public Eating getEating() {
+        return eating;
+    }
 }
