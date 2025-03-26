@@ -1,8 +1,16 @@
 package ru.r1b.calorietrackingservice.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 import java.util.UUID;
 
-public class Dish implements DataModel {
+@Entity
+public class Dish {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String title;
     private int caloricContent;
@@ -10,7 +18,9 @@ public class Dish implements DataModel {
     private int fats;
     private int carbs;
 
-    @Override
+    public Dish() {
+    }
+
     public UUID getId() {
         return id;
     }

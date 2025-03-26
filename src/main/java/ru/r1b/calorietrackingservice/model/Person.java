@@ -11,7 +11,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
-public class User implements DataModel {
+public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
@@ -23,7 +23,11 @@ public class User implements DataModel {
     private int height;
     private Purpose purpose;
 
-    public User(String name, String email, LocalDate dayOfBorn, Gender gender, int weight, int height, Purpose purpose) {
+    public Person() {
+
+    }
+
+    public Person(String name, String email, LocalDate dayOfBorn, Gender gender, int weight, int height, Purpose purpose) {
         this.name = name;
         this.email = email;
         this.dayOfBorn = dayOfBorn;
@@ -33,7 +37,6 @@ public class User implements DataModel {
         this.purpose = purpose;
     }
 
-    @Override
     public UUID getId() {
         return id;
     }

@@ -11,8 +11,8 @@ import java.util.Map;
 import java.util.UUID;
 
 @RestController()
-@RequestMapping("/user")
-public class UserStaticsController {
+@RequestMapping("/person")
+public class PersonStaticsController {
     @GetMapping("/daily-report")
     public DailyReport getDailyReport(UUID userId) {
         // todo: to be implemented
