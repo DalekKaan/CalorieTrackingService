@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import ru.r1b.calorietrackingservice.enumerate.Gender;
 import ru.r1b.calorietrackingservice.enumerate.Purpose;
 import ru.r1b.calorietrackingservice.model.Person;
-import ru.r1b.calorietrackingservice.service.UserService;
+import ru.r1b.calorietrackingservice.service.PersonService;
 
 import java.time.LocalDate;
 
@@ -17,7 +17,7 @@ class HarrisBenedictCalculatorTest {
     @Disabled // todo: remove when ready
     void calculate() {
 
-        var calculator = new HarrisBenedictCalculator(new UserService());
+        var calculator = new HarrisBenedictCalculator(new PersonService());
         // todo: use @MethodValues
         var user = new Person(
                 "John Smith",

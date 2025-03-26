@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 
 @Service
-public class UserService {
+public class PersonService {
     public int getAge(Person person) {
         return (int) ChronoUnit.YEARS.between(person.getDayOfBorn(), LocalDate.now());
     }
