@@ -1,5 +1,6 @@
 package ru.r1b.calorietrackingservice.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
@@ -12,12 +13,5 @@ public class DishInEating {
     @ManyToOne
     @Id
     private Eating eating;
-
-    public Dish getDish() {
-        return dish;
-    }
-
-    public Eating getEating() {
-        return eating;
-    }
+    int cnt;
 }
