@@ -8,7 +8,4 @@ import java.time.temporal.ChronoUnit;
 
 @Service
 public class PersonService {
-    public int getAge(Person person) {
-        return (int) ChronoUnit.YEARS.between(person.getDayOfBorn(), LocalDate.now());
-    }
 }

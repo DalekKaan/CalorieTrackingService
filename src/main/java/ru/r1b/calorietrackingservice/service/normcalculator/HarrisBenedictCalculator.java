@@ -5,6 +5,9 @@ import ru.r1b.calorietrackingservice.enumerate.Gender;
 import ru.r1b.calorietrackingservice.model.Person;
 import ru.r1b.calorietrackingservice.service.PersonService;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+
 /**
  * Harris-Benedict calorie calculator
  * <p>
@@ -13,19 +16,18 @@ import ru.r1b.calorietrackingservice.service.PersonService;
  */
 @Service
 public class HarrisBenedictCalculator implements Calculator {
-    private final PersonService personService;
 
-    public HarrisBenedictCalculator(PersonService personService) {
-        this.personService = personService;
+    private static int getAge(Person person) {
+        return (int) ChronoUnit.YEARS.between(person.getDayOfBorn(), LocalDate.now());
     }
 
     @Override
     public int calculate(Person person) {
         double result;
         if (person.getGender() == Gender.MALE) {
-            result = 66.473 + 13.752 * person.getWeight() + 5.003 * person.getHeight() - 6.755 * personService.getAge(person);
+            result = 66.473 + 13.752 * person.getWeight() + 5.003 * person.getHeight() - 6.755 * getAge(person);
         } else {
-            result = 655.096 + 9.563 * person.getWeight() + 1.85 * person.getHeight() - 4.679 * personService.getAge(person);
+            result = 655.096 + 9.563 * person.getWeight() + 1.85 * person.getHeight() - 4.679 * getAge(person);
         }
         double k;
         switch (person.getActivity()) {

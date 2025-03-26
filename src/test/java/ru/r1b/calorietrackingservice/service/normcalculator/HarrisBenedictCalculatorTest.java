@@ -20,7 +20,7 @@ class HarrisBenedictCalculatorTest {
     @MethodSource("provideUsersForCalculate")
     void calculate(Person person, int expected) {
 
-        var calculator = new HarrisBenedictCalculator(new PersonService());
+        var calculator = new HarrisBenedictCalculator();
         assertEquals(expected, calculator.calculate(person));
     }
 
