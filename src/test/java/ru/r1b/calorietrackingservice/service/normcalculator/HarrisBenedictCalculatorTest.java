@@ -29,14 +29,36 @@ class HarrisBenedictCalculatorTest {
                 Arguments.of(new Person(
                                 "John Smith",
                                 "john.smith@yandex.ru",
-                                LocalDate.of(1990, 1, 1),
+                                LocalDate.of(1993, 7, 14),
                                 Gender.MALE,
                                 100,
                                 180,
                                 Purpose.MAINT,
                                 PhysicalActivity.WEEK13
                         ),
-                        2285)
+                        2932),
+                Arguments.of(new Person(
+                                "Olga Orlova",
+                                "o.orlova@yandex.ru",
+                                LocalDate.of(1966, 3, 2),
+                                Gender.FEMALE,
+                                70,
+                                170,
+                                Purpose.MAINT,
+                                PhysicalActivity.SITTING
+                        ),
+                        1635),
+                Arguments.of(new Person(
+                                "Anna Petrova",
+                                "a.pethova@yandex.ru",
+                                LocalDate.of(1989, 2, 24),
+                                Gender.FEMALE,
+                                70,
+                                170,
+                                Purpose.MAINT,
+                                PhysicalActivity.WEEK35
+                        ),
+                        2150)
         );
     }
 }
