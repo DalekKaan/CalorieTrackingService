@@ -13,6 +13,7 @@ public class Eating {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     @ManyToOne
+    // todo: cascade
     private Person person;
     private LocalDateTime dateTime;
     @OneToMany(mappedBy = "eating")

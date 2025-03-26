@@ -1,6 +1,8 @@
 # Calorie tracking service
 This is testing task for 1221Systems job interview.
 
+*Note:* [Amplicode](https://amplicode.ru/) is used just for CRUD controller generation
+
 # Build & run
 
 To prepare the environment you can use docker compose setup:
