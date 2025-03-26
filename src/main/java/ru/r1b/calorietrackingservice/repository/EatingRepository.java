@@ -1,29 +1,9 @@
 package ru.r1b.calorietrackingservice.repository;
 
-import org.springframework.stereotype.Repository;
-import ru.r1b.calorietrackingservice.model.DataModel;
+import org.springframework.data.jpa.repository.JpaRepository;
+import ru.r1b.calorietrackingservice.model.Eating;
 
-import java.util.Collection;
-import java.util.List;
 import java.util.UUID;
 
-@Repository
-public class EatingRepository implements DataRepository {
-    @Override
-    public DataModel getOne(UUID id) {
-        // todo: to be implemented
-        return null;
-    }
-
-    @Override
-    public DataModel getOne(Condition condition) {
-        // todo: to be implemented
-        return null;
-    }
-
-    @Override
-    public Collection<DataModel> getMany(Condition condition) {
-        // todo: to be implemented
-        return List.of();
-    }
+public interface EatingRepository extends JpaRepository<Eating, UUID> {
 }

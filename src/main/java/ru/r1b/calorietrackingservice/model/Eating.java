@@ -1,29 +1,39 @@
 package ru.r1b.calorietrackingservice.model;
 
+import jakarta.persistence.*;
+
 import java.time.LocalDateTime;
-import java.util.HashMap;
+import java.util.Set;
 import java.util.UUID;
 
-public class Eating implements DataModel {
+@Entity
+public class Eating {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
-    private User user;
+    @ManyToOne
+    private Person person;
     private LocalDateTime dateTime;
-    private HashMap<Integer, Dish> dishes;
+    @OneToMany(mappedBy = "eating")
+    private Set<DishInEating> dishes;
 
-    @Override
+    public void setUser(Person person) {
+        this.person = person;
+    }
+
     public UUID getId() {
         return id;
     }
 
-    public User getUser() {
-        return user;
+    public Person getUser() {
+        return person;
     }
 
     public LocalDateTime getDateTime() {
         return dateTime;
     }
 
-    public HashMap<Integer, Dish> getDishes() {
+    public Set<DishInEating> getDishes() {
         return dishes;
     }
 }

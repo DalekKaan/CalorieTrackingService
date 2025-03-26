@@ -1,9 +1,10 @@
 package ru.r1b.calorietrackingservice.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import ru.r1b.calorietrackingservice.model.Dish;
+import ru.r1b.calorietrackingservice.model.Person;
 
 import java.util.UUID;
 
-public interface DishesRepository extends JpaRepository<Dish, UUID> {
+
+public interface PersonsRepository extends JpaRepository<Person, UUID> {
 }

@@ -1,13 +1,19 @@
 package ru.r1b.calorietrackingservice.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import ru.r1b.calorietrackingservice.enumerate.Gender;
 import ru.r1b.calorietrackingservice.enumerate.Purpose;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.UUID;
 
-public class User implements DataModel {
+@Entity
+public class Person {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String name;
     private String email;
@@ -17,7 +23,11 @@ public class User implements DataModel {
     private int height;
     private Purpose purpose;
 
-    public User(String name, String email, LocalDate dayOfBorn, Gender gender, int weight, int height, Purpose purpose) {
+    public Person() {
+
+    }
+
+    public Person(String name, String email, LocalDate dayOfBorn, Gender gender, int weight, int height, Purpose purpose) {
         this.name = name;
         this.email = email;
         this.dayOfBorn = dayOfBorn;
@@ -27,7 +37,6 @@ public class User implements DataModel {
         this.purpose = purpose;
     }
 
-    @Override
     public UUID getId() {
         return id;
     }
