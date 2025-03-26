@@ -4,6 +4,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import ru.r1b.calorietrackingservice.enumerate.Gender;
+import ru.r1b.calorietrackingservice.enumerate.PhysicalActivity;
 import ru.r1b.calorietrackingservice.enumerate.Purpose;
 import ru.r1b.calorietrackingservice.model.Person;
 import ru.r1b.calorietrackingservice.service.PersonService;
@@ -32,7 +33,8 @@ class HarrisBenedictCalculatorTest {
                                 Gender.MALE,
                                 100,
                                 180,
-                                Purpose.MAINT
+                                Purpose.MAINT,
+                                PhysicalActivity.WEEK13
                         ),
                         2285)
         );

@@ -4,9 +4,9 @@ public enum Gender {
     MALE('m'),
     FEMALE('f');
 
-    public char var;
+    public char val;
 
     Gender(char var) {
-        this.var = var;
+        this.val = var;
     }
 }
