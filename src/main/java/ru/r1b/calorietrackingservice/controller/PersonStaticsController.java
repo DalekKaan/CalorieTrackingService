@@ -21,13 +21,9 @@ import java.util.UUID;
 // todo: validation
 public class PersonStaticsController {
     private final PersonService service;
-    private final PersonsRepository repository;
-    private final HarrisBenedictCalculator calculator;
 
-    public PersonStaticsController(PersonService personService, PersonsRepository repository, HarrisBenedictCalculator calculator) {
+    public PersonStaticsController(PersonService personService) {
         this.service = personService;
-        this.repository = repository;
-        this.calculator = calculator;
     }
 
     @GetMapping("/daily-report")
@@ -48,8 +44,9 @@ public class PersonStaticsController {
     }
 
     @GetMapping("/eating-history")
-    public EatingHistory getEatingHistory(UUID userId) {
-        // todo: to be implemented
-        return new EatingHistory(Map.of());
+    public EatingHistory getEatingHistory(
+            @RequestParam UUID personId) {
+
+        return service.getEatingHistory(personId);
     }
 }
