@@ -1,9 +1,8 @@
 package ru.r1b.calorietrackingservice.service.normcalculator;
 
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 import ru.r1b.calorietrackingservice.enumerate.Gender;
 import ru.r1b.calorietrackingservice.model.Person;
-import ru.r1b.calorietrackingservice.service.PersonService;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -14,7 +13,7 @@ import java.time.temporal.ChronoUnit;
  * <a href="https://www.rlsnet.ru/med-calculators/gastroenterologiya-i-gepatologiya/formula-xarrisa-benedikta-51">Formula version used</a>
  * </p>
  */
-@Service
+@Component("harris-benedict")
 public class HarrisBenedictCalculator implements Calculator {
 
     private static int getAge(Person person) {

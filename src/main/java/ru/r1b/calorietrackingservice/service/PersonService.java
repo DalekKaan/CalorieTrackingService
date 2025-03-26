@@ -1,5 +1,6 @@
 package ru.r1b.calorietrackingservice.service;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import ru.r1b.calorietrackingservice.model.Eating;
 import ru.r1b.calorietrackingservice.model.Person;
@@ -8,7 +9,7 @@ import ru.r1b.calorietrackingservice.repository.EatingRepository;
 import ru.r1b.calorietrackingservice.scheme.personstatistics.CheckLimit;
 import ru.r1b.calorietrackingservice.scheme.userstatistics.DailyReport;
 import ru.r1b.calorietrackingservice.scheme.userstatistics.EatingHistory;
-import ru.r1b.calorietrackingservice.service.normcalculator.HarrisBenedictCalculator;
+import ru.r1b.calorietrackingservice.service.normcalculator.Calculator;
 
 import java.time.LocalDate;
 import java.util.Collection;
@@ -19,10 +20,10 @@ import java.util.Map;
 @Service
 public class PersonService {
     private final DailyReportQuery dailyReportQuery;
-    private final HarrisBenedictCalculator calculator;
+    private final Calculator calculator;
     private final EatingRepository eatingRepository;
 
-    public PersonService(DailyReportQuery dailyReportQuery, HarrisBenedictCalculator calculator, EatingRepository eatingRepository) {
+    public PersonService(DailyReportQuery dailyReportQuery, @Qualifier("harris-benedict") Calculator calculator, EatingRepository eatingRepository) {
         this.dailyReportQuery = dailyReportQuery;
         this.calculator = calculator;
         this.eatingRepository = eatingRepository;
