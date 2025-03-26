@@ -7,6 +7,9 @@ import ru.r1b.calorietrackingservice.service.PersonService;
 
 /**
  * Harris-Benedict calorie calculator
+ * <p>
+ * <a href="https://www.rlsnet.ru/med-calculators/gastroenterologiya-i-gepatologiya/formula-xarrisa-benedikta-51">Formula version used</a>
+ * </p>
  */
 @Service
 public class HarrisBenedictCalculator implements Calculator {
@@ -18,9 +21,23 @@ public class HarrisBenedictCalculator implements Calculator {
 
     @Override
     public int calculate(Person person) {
+        double result;
         if (person.getGender() == Gender.MALE) {
-            return (int) (88.36 + 13.4 * person.getWeight() + 4.8 * person.getHeight() - 5.7 * personService.getAge(person));
+            result = 66.473 + 13.752 * person.getWeight() + 5.003 * person.getHeight() - 6.755 * personService.getAge(person);
+        } else {
+            result = 655.096 + 9.563 * person.getWeight() + 1.85 * person.getHeight() - 4.679 * personService.getAge(person);
         }
-        return (int) (447.6 + 9.2 * person.getWeight() + 3.1 * person.getHeight() - 4.3 * personService.getAge(person));
+        double k;
+        switch (person.getActivity()) {
+            case SITTING -> k = 1.2;
+            case WEEK13 -> k = 1.375;
+            case WEEK35 -> k = 1.4625;
+            case WEEK45 -> k = 1.55;
+            case EVERYDAY -> k = 1.6375;
+            case DAY2 -> k = 1.725;
+            case DAY2INTENSIVE -> k = 1.9;
+            default -> k = 1;
+        }
+        return (int) (result * k);
     }
 }

@@ -1,4 +1,4 @@
-insert into person (id, name, gender, day_of_born, email, height, weight, purpose)
+insert into person (id, name, gender, day_of_born, email, height, weight, purpose, activity)
 values ('1dfb0519-e0be-4f40-8a73-8bd62237127b',
         'Alex Gustov',
         0,
@@ -6,7 +6,8 @@ values ('1dfb0519-e0be-4f40-8a73-8bd62237127b',
         'a.gustov@gmail.com',
         170,
         80,
-        0),
+        0,
+        3),
        ('1fae4382-75a7-4eb5-a244-e1251e01cdf6',
         'Anna Felis',
         1,
@@ -14,7 +15,8 @@ values ('1dfb0519-e0be-4f40-8a73-8bd62237127b',
         'a.felis@yandex.ru',
         160,
         70,
-        1),
+        1,
+        3),
        ('b0ea4671-9e35-4443-9dcf-1bb9ad6846d1',
         'Igor Karkarov',
         0,
@@ -22,7 +24,8 @@ values ('1dfb0519-e0be-4f40-8a73-8bd62237127b',
         'i.karkarov@rambler.ru',
         185,
         100,
-        2);
+        2,
+        3);
 
 insert into dish(id, title, caloric_content, proteins, fats, carbs)
 VALUES ('fb262d1a-5d77-4d45-a271-ad78375e6cef',

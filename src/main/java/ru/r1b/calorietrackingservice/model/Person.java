@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import ru.r1b.calorietrackingservice.enumerate.Gender;
+import ru.r1b.calorietrackingservice.enumerate.PhysicalActivity;
 import ru.r1b.calorietrackingservice.enumerate.Purpose;
 
 import java.time.LocalDate;
@@ -22,12 +23,13 @@ public class Person {
     private int weight;
     private int height;
     private Purpose purpose;
+    private PhysicalActivity activity;
 
     public Person() {
 
     }
 
-    public Person(String name, String email, LocalDate dayOfBorn, Gender gender, int weight, int height, Purpose purpose) {
+    public Person(String name, String email, LocalDate dayOfBorn, Gender gender, int weight, int height, Purpose purpose, PhysicalActivity activity) {
         this.name = name;
         this.email = email;
         this.dayOfBorn = dayOfBorn;
@@ -35,6 +37,7 @@ public class Person {
         this.weight = weight;
         this.height = height;
         this.purpose = purpose;
+        this.activity = activity;
     }
 
     public UUID getId() {
@@ -67,5 +70,9 @@ public class Person {
 
     public Purpose getPurpose() {
         return purpose;
+    }
+
+    public PhysicalActivity getActivity() {
+        return activity;
     }
 }
