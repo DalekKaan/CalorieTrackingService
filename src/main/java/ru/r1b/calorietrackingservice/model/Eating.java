@@ -14,7 +14,7 @@ public class Eating {
     @ManyToOne
     private Person person;
     private LocalDateTime dateTime;
-    @OneToMany
+    @OneToMany(mappedBy = "eating")
     private Set<DishInEating> dishes;
 
     public void setUser(Person person) {
