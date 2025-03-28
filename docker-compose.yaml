@@ -31,6 +31,15 @@ services:
     networks:
       - postgres
     restart: unless-stopped
+  web:
+    container_name: web_container
+    build: .
+    environment:
+      DB_HOST: "${DB_HOST:-postgres_container}"
+    ports:
+      - "8080:8080"
+    networks:
+      - postgres
 
 networks:
   postgres:

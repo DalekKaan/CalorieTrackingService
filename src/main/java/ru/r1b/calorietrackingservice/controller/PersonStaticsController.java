@@ -15,7 +15,7 @@ import ru.r1b.calorietrackingservice.service.PersonService;
 import java.time.LocalDate;
 
 @RestController()
-@RequestMapping("/person")
+@RequestMapping("/person/statistics")
 public class PersonStaticsController {
     private final PersonService service;
 
