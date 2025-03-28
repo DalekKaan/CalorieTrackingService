@@ -5,16 +5,16 @@ This is testing task for 1221Systems job interview.
 
 # Build & run
 
-To prepare the environment you can use docker compose setup:
+Use `docker-compose` to build & run application containers 
 
 ```bash
-# create extra folders to store database data
-mkdir -p docker/pgadmin docker/postgres
+mkdir -p docker/pgadmin docker/postgres # create extra folders to store database data
 docker composer up -d
 ```
 
 Access:
-- Database connection: `postgres:changeme@localhost:5432/postgres`
+- Database connection by default: `postgres:changeme@localhost:5432/postgres`
 - PgAdmin: http://localhost:5050
+- Main application: http://localhost:8080
 
-*Note:* Use `pgadmin_container` as a database host when configure PgAdmin new connection.
+For HTTP request examples see [Postman collection](1221systems.postman_collection.json).

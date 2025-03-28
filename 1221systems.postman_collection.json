@@ -1,0 +1,788 @@
+{
+	"info": {
+		"_postman_id": "36ffeef0-42c5-4721-9618-aa1ee102171b",
+		"name": "1221systems",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2822958"
+	},
+	"item": [
+		{
+			"name": "Resource",
+			"item": [
+				{
+					"name": "Person",
+					"item": [
+						{
+							"name": "Get all",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/person?page=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get one",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/person/1dfb0519-e0be-4f40-8a73-8bd62237127b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person",
+										"1dfb0519-e0be-4f40-8a73-8bd62237127b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get many",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/person/by-ids?ids=b0ea4671-9e35-4443-9dcf-1bb9ad6846d1&ids=1fae4382-75a7-4eb5-a244-e1251e01cdf6",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person",
+										"by-ids"
+									],
+									"query": [
+										{
+											"key": "ids",
+											"value": "b0ea4671-9e35-4443-9dcf-1bb9ad6846d1"
+										},
+										{
+											"key": "ids",
+											"value": "1fae4382-75a7-4eb5-a244-e1251e01cdf6"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"activity\": \"WEEK13\",\r\n    \"dayOfBorn\": \"2010-12-07\",\r\n    \"gender\": \"MALE\",\r\n    \"height\": 150,\r\n    \"purpose\": \"LOSS\",\r\n    \"weight\": 82,\r\n    \"email\": \"a.gustov.jr@gmail.com\",\r\n    \"name\": \"Alex Gustov JR\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/person",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"activity\": \"WEEK45\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/person/1dfb0519-e0be-4f40-8a73-8bd62237127b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person",
+										"1dfb0519-e0be-4f40-8a73-8bd62237127b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update many",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"activity\": \"WEEK45\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/person?ids=1fae4382-75a7-4eb5-a244-e1251e01cdf6&ids=b0ea4671-9e35-4443-9dcf-1bb9ad6846d1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person"
+									],
+									"query": [
+										{
+											"key": "ids",
+											"value": "1fae4382-75a7-4eb5-a244-e1251e01cdf6"
+										},
+										{
+											"key": "ids",
+											"value": "b0ea4671-9e35-4443-9dcf-1bb9ad6846d1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/person/1dfb0519-e0be-4f40-8a73-8bd62237127b",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person",
+										"1dfb0519-e0be-4f40-8a73-8bd62237127b"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete many",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/person?ids=1fae4382-75a7-4eb5-a244-e1251e01cdf6&ids=b0ea4671-9e35-4443-9dcf-1bb9ad6846d1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"person"
+									],
+									"query": [
+										{
+											"key": "ids",
+											"value": "1fae4382-75a7-4eb5-a244-e1251e01cdf6"
+										},
+										{
+											"key": "ids",
+											"value": "b0ea4671-9e35-4443-9dcf-1bb9ad6846d1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Dish",
+					"item": [
+						{
+							"name": "Get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/dish?page=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"dish"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get one",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/dish/fb262d1a-5d77-4d45-a271-ad78375e6cef",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"dish",
+										"fb262d1a-5d77-4d45-a271-ad78375e6cef"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get many",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/dish/by-ids?ids=fb262d1a-5d77-4d45-a271-ad78375e6cef&ids=325030ed-8163-4e6f-87a9-a6ca8ac1df92",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"dish",
+										"by-ids"
+									],
+									"query": [
+										{
+											"key": "ids",
+											"value": "fb262d1a-5d77-4d45-a271-ad78375e6cef"
+										},
+										{
+											"key": "ids",
+											"value": "325030ed-8163-4e6f-87a9-a6ca8ac1df92"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"vine\",\r\n    \"caloricContent\": 67,\r\n    \"proteins\": 1,\r\n    \"fats\": 1,\r\n    \"carbs\": 17\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/dish",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"dish"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"carbs\": 32\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/dish/fb262d1a-5d77-4d45-a271-ad78375e6cef",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"dish",
+										"fb262d1a-5d77-4d45-a271-ad78375e6cef"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update many",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"carbs\": 32\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/dish?ids=325030ed-8163-4e6f-87a9-a6ca8ac1df92&ids=ebe4d182-da23-4238-96b5-6324132fec20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"dish"
+									],
+									"query": [
+										{
+											"key": "ids",
+											"value": "325030ed-8163-4e6f-87a9-a6ca8ac1df92"
+										},
+										{
+											"key": "ids",
+											"value": "ebe4d182-da23-4238-96b5-6324132fec20"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/dish/fb262d1a-5d77-4d45-a271-ad78375e6cef",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"dish",
+										"fb262d1a-5d77-4d45-a271-ad78375e6cef"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete many",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/dish?ids=325030ed-8163-4e6f-87a9-a6ca8ac1df92&ids=ebe4d182-da23-4238-96b5-6324132fec20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"dish"
+									],
+									"query": [
+										{
+											"key": "ids",
+											"value": "325030ed-8163-4e6f-87a9-a6ca8ac1df92"
+										},
+										{
+											"key": "ids",
+											"value": "ebe4d182-da23-4238-96b5-6324132fec20"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Eating",
+					"item": [
+						{
+							"name": "Get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/eating?page=0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"eating"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "0"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get one",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/eating/3b04c377-7ff1-487f-989f-4cea69e54f11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"eating",
+										"3b04c377-7ff1-487f-989f-4cea69e54f11"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get many",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/eating/by-ids?ids=3b04c377-7ff1-487f-989f-4cea69e54f11&ids=b4232eb2-32ee-4e22-97e0-5656ff41b206",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"eating",
+										"by-ids"
+									],
+									"query": [
+										{
+											"key": "ids",
+											"value": "3b04c377-7ff1-487f-989f-4cea69e54f11"
+										},
+										{
+											"key": "ids",
+											"value": "b4232eb2-32ee-4e22-97e0-5656ff41b206"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"dishes\": {\r\n            \"fb262d1a-5d77-4d45-a271-ad78375e6cef\": 5\r\n        },\r\n        \"user\": {\r\n            \"id\": \"1dfb0519-e0be-4f40-8a73-8bd62237127b\"\r\n        }\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/eating",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"eating"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"dishes\": {\r\n            \"fb262d1a-5d77-4d45-a271-ad78375e6cef\": 5,\r\n            \"ebe4d182-da23-4238-96b5-6324132fec20\": 2\r\n        }\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/eating/3b04c377-7ff1-487f-989f-4cea69e54f11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"eating",
+										"3b04c377-7ff1-487f-989f-4cea69e54f11"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update many",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\r\n        \"dishes\": {\r\n            \"fb262d1a-5d77-4d45-a271-ad78375e6cef\": 5,\r\n            \"ebe4d182-da23-4238-96b5-6324132fec20\": 2\r\n        }\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/eating?ids=b4232eb2-32ee-4e22-97e0-5656ff41b206&ids=2fb16d24-6ba9-4a6a-99af-fa1b3aeb13ae",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"eating"
+									],
+									"query": [
+										{
+											"key": "ids",
+											"value": "b4232eb2-32ee-4e22-97e0-5656ff41b206"
+										},
+										{
+											"key": "ids",
+											"value": "2fb16d24-6ba9-4a6a-99af-fa1b3aeb13ae"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/eating/3b04c377-7ff1-487f-989f-4cea69e54f11",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"eating",
+										"3b04c377-7ff1-487f-989f-4cea69e54f11"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete many",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/eating?ids=b4232eb2-32ee-4e22-97e0-5656ff41b206&ids=2fb16d24-6ba9-4a6a-99af-fa1b3aeb13ae",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"eating"
+									],
+									"query": [
+										{
+											"key": "ids",
+											"value": "b4232eb2-32ee-4e22-97e0-5656ff41b206"
+										},
+										{
+											"key": "ids",
+											"value": "2fb16d24-6ba9-4a6a-99af-fa1b3aeb13ae"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Daily report",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/statistics/daily-report?person=1fae4382-75a7-4eb5-a244-e1251e01cdf6&date=2025-03-25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"statistics",
+						"daily-report"
+					],
+					"query": [
+						{
+							"key": "person",
+							"value": "1fae4382-75a7-4eb5-a244-e1251e01cdf6"
+						},
+						{
+							"key": "date",
+							"value": "2025-03-25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Check limit",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/statistics/check-limit?person=1fae4382-75a7-4eb5-a244-e1251e01cdf6&date=2025-03-25",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"statistics",
+						"check-limit"
+					],
+					"query": [
+						{
+							"key": "person",
+							"value": "1fae4382-75a7-4eb5-a244-e1251e01cdf6"
+						},
+						{
+							"key": "date",
+							"value": "2025-03-25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eating history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/person/statistics/eating-history?person=1fae4382-75a7-4eb5-a244-e1251e01cdf6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"person",
+						"statistics",
+						"eating-history"
+					],
+					"query": [
+						{
+							"key": "person",
+							"value": "1fae4382-75a7-4eb5-a244-e1251e01cdf6"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
