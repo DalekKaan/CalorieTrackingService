@@ -12,7 +12,7 @@ public class RestError {
     private LocalDateTime timestamp;
     private String message;
     private String debugMessage;
-    private List<SubRestError> subErrors;
+    private List<RestError> subErrors;
 
     private RestError() {
         timestamp = LocalDateTime.now();
@@ -53,7 +53,7 @@ public class RestError {
         return debugMessage;
     }
 
-    public List<SubRestError> getSubErrors() {
+    public List<RestError> getSubErrors() {
         return subErrors;
     }
 }
