@@ -6,9 +6,9 @@ import ru.r1b.calorietrackingservice.model.Eating;
 import ru.r1b.calorietrackingservice.model.Person;
 import ru.r1b.calorietrackingservice.query.person.DailyReportQuery;
 import ru.r1b.calorietrackingservice.repository.EatingRepository;
-import ru.r1b.calorietrackingservice.scheme.personstatistics.CheckLimit;
-import ru.r1b.calorietrackingservice.scheme.userstatistics.DailyReport;
-import ru.r1b.calorietrackingservice.scheme.userstatistics.EatingHistory;
+import ru.r1b.calorietrackingservice.http.scheme.personstatistics.CheckLimit;
+import ru.r1b.calorietrackingservice.http.scheme.personstatistics.DailyReport;
+import ru.r1b.calorietrackingservice.http.scheme.personstatistics.EatingHistory;
 import ru.r1b.calorietrackingservice.service.normcalculator.Calculator;
 
 import java.time.LocalDate;

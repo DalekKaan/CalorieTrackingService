@@ -6,7 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
 import org.springframework.format.annotation.DateTimeFormat;
-import ru.r1b.calorietrackingservice.constraint.MinYears;
+import ru.r1b.calorietrackingservice.http.validation.constraint.MinYears;
 import ru.r1b.calorietrackingservice.enumerate.Gender;
 import ru.r1b.calorietrackingservice.enumerate.PhysicalActivity;
 import ru.r1b.calorietrackingservice.enumerate.Purpose;

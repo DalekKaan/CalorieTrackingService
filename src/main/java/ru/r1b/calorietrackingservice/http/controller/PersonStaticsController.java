@@ -1,4 +1,4 @@
-package ru.r1b.calorietrackingservice.controller;
+package ru.r1b.calorietrackingservice.http.controller;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.validation.annotation.Validated;
@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.r1b.calorietrackingservice.model.Person;
-import ru.r1b.calorietrackingservice.scheme.personstatistics.CheckLimit;
-import ru.r1b.calorietrackingservice.scheme.userstatistics.DailyReport;
-import ru.r1b.calorietrackingservice.scheme.userstatistics.EatingHistory;
+import ru.r1b.calorietrackingservice.http.scheme.personstatistics.CheckLimit;
+import ru.r1b.calorietrackingservice.http.scheme.personstatistics.DailyReport;
+import ru.r1b.calorietrackingservice.http.scheme.personstatistics.EatingHistory;
 import ru.r1b.calorietrackingservice.service.PersonService;
 
 import java.time.LocalDate;

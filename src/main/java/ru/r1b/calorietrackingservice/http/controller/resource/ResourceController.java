@@ -1,4 +1,4 @@
-package ru.r1b.calorietrackingservice.controller.resource;
+package ru.r1b.calorietrackingservice.http.controller.resource;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.data.domain.Pageable;
