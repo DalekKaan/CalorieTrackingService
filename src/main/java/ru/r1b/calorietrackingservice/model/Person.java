@@ -15,7 +15,7 @@ import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
-public class Person {
+public class Person implements ResourceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;

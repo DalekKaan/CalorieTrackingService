@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.UUID;
 
 @Entity
-public class Eating {
+public class Eating implements ResourceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;

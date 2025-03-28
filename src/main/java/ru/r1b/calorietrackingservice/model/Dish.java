@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import java.util.UUID;
 
 @Entity
-public class Dish {
+public class Dish implements ResourceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
