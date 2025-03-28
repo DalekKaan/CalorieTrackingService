@@ -1,4 +1,4 @@
-package ru.r1b.calorietrackingservice.scheme.personstatistics;
+package ru.r1b.calorietrackingservice.http.scheme.personstatistics;
 
 public final class DailyReport {
     private double caloriesReceived;

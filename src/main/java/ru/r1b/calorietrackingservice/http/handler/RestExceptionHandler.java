@@ -1,4 +1,4 @@
-package ru.r1b.calorietrackingservice.handler;
+package ru.r1b.calorietrackingservice.http.handler;
 
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.beans.TypeMismatchException;
@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
-import ru.r1b.calorietrackingservice.scheme.error.RestError;
-import ru.r1b.calorietrackingservice.scheme.error.ValidationRestError;
+import ru.r1b.calorietrackingservice.http.scheme.error.RestError;
+import ru.r1b.calorietrackingservice.http.scheme.error.ValidationRestError;
 
 import static org.springframework.http.HttpStatus.BAD_REQUEST;
 

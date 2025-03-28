@@ -1,4 +1,4 @@
-package ru.r1b.calorietrackingservice.scheme.error;
+package ru.r1b.calorietrackingservice.http.scheme.error;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import org.springframework.http.HttpStatus;

@@ -1,8 +1,8 @@
-package ru.r1b.calorietrackingservice.validator;
+package ru.r1b.calorietrackingservice.http.validation.validator;
 
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
-import ru.r1b.calorietrackingservice.constraint.MinYears;
+import ru.r1b.calorietrackingservice.http.validation.constraint.MinYears;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
