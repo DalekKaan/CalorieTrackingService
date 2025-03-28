@@ -18,17 +18,17 @@ public class Dish implements ResourceEntity {
     @NotBlank(message = "Dish title is required")
     private String title;
     @Positive
-    @Max(value = 10 * 1000 * 1000)
+    @Max(value = Integer.MAX_VALUE)
     private int caloricContent;
     // todo: switch lang
     @Positive
-    @Max(value = 10 * 1000 * 1000)
+    @Max(value = Integer.MAX_VALUE)
     private int proteins;
     @Positive
-    @Max(value = 10 * 1000 * 1000)
+    @Max(value = Integer.MAX_VALUE)
     private int fats;
     @Positive
-    @Max(value = 10 * 1000 * 1000)
+    @Max(value = Integer.MAX_VALUE)
     private int carbs;
 
     public UUID getId() {

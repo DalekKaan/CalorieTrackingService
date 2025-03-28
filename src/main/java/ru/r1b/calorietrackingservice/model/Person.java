@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
 import org.springframework.format.annotation.DateTimeFormat;
+import ru.r1b.calorietrackingservice.http.validation.constraint.EnumContains;
 import ru.r1b.calorietrackingservice.http.validation.constraint.MinYears;
 import ru.r1b.calorietrackingservice.enumerate.Gender;
 import ru.r1b.calorietrackingservice.enumerate.PhysicalActivity;
@@ -31,7 +32,7 @@ public class Person implements ResourceEntity {
     @DateTimeFormat( pattern="yyyy-MM-dd")
     private LocalDate dayOfBorn;
     @NotNull(message = "Person gender is required")
-    // todo: in
+    @EnumContains(enumClass = Gender.class, message = "Person gender must be `MALE` or `FEMALE`")
     private Gender gender;
     @NotNull(message = "Person weight is required")
     @Min(value = 20, message = "Person weight mint be grater than {value}")
@@ -42,7 +43,7 @@ public class Person implements ResourceEntity {
     @Max(value = 250, message = "Person height mint be lower than {value}")
     private int height;
     @NotNull(message = "Person purpose is required")
-    // todo: in
+    @EnumContains(enumClass = Purpose.class, message = "Person purpose must be `LOSS`, `GAIN` or `MAINT`")
     private Purpose purpose;
     private PhysicalActivity activity;
 
