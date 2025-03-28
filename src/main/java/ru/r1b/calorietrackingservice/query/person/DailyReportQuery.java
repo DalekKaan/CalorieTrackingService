@@ -4,7 +4,7 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
-import ru.r1b.calorietrackingservice.scheme.userstatistics.DailyReport;
+import ru.r1b.calorietrackingservice.scheme.personstatistics.DailyReport;
 
 import java.time.LocalDate;
 import java.util.UUID;

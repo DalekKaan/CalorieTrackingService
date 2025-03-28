@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import ru.r1b.calorietrackingservice.model.Person;
 import ru.r1b.calorietrackingservice.scheme.personstatistics.CheckLimit;
-import ru.r1b.calorietrackingservice.scheme.userstatistics.DailyReport;
-import ru.r1b.calorietrackingservice.scheme.userstatistics.EatingHistory;
+import ru.r1b.calorietrackingservice.scheme.personstatistics.DailyReport;
+import ru.r1b.calorietrackingservice.scheme.personstatistics.EatingHistory;
 import ru.r1b.calorietrackingservice.service.PersonService;
 
 import java.time.LocalDate;

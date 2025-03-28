@@ -1,4 +1,4 @@
-package ru.r1b.calorietrackingservice.scheme.userstatistics;
+package ru.r1b.calorietrackingservice.scheme.personstatistics;
 
 import ru.r1b.calorietrackingservice.model.Eating;
 
