@@ -9,6 +9,7 @@ import java.util.UUID;
 
 @Entity
 public class Dish implements ResourceEntity {
+    // todo: validation
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;

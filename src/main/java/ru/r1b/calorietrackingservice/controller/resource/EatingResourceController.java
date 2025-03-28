@@ -9,6 +9,7 @@ import ru.r1b.calorietrackingservice.repository.EatingRepository;
 @RestController
 @RequestMapping("/eating")
 public class EatingResourceController extends CommonResourceController<Eating> {
+    // todo: save nested
     public EatingResourceController(EatingRepository repository, ObjectMapper objectMapper) {
         super(repository, objectMapper);
     }
