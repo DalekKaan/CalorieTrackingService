@@ -4,19 +4,31 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 import java.util.UUID;
 
 @Entity
 public class Dish implements ResourceEntity {
-    // todo: validation
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+    @NotBlank(message = "Dish title is required")
     private String title;
+    @Positive
+    @Max(value = 10 * 1000 * 1000)
     private int caloricContent;
+    // todo: switch lang
+    @Positive
+    @Max(value = 10 * 1000 * 1000)
     private int proteins;
+    @Positive
+    @Max(value = 10 * 1000 * 1000)
     private int fats;
+    @Positive
+    @Max(value = 10 * 1000 * 1000)
     private int carbs;
 
     public UUID getId() {
