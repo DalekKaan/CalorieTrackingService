@@ -1,11 +1,13 @@
 package ru.r1b.calorietrackingservice.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.ColumnTransformer;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
+import ru.r1b.calorietrackingservice.model.converter.EntityCountConverter;
 
 import java.time.LocalDateTime;
-import java.util.Set;
+import java.util.Map;
 import java.util.UUID;
 
 @Entity
@@ -18,8 +20,10 @@ public class Eating implements ResourceEntity {
     @OnDelete(action = OnDeleteAction.CASCADE)
     private Person person;
     private LocalDateTime dateTime;
-    @OneToMany(mappedBy = "eating")
-    private Set<DishInEating> dishes;
+    @Convert(converter = EntityCountConverter.class)
+    @Column(columnDefinition = "jsonb")
+    @ColumnTransformer(write = "?::jsonb")
+    private Map<UUID, Integer> dishes;
 
     public void setUser(Person person) {
         this.person = person;
@@ -37,7 +41,7 @@ public class Eating implements ResourceEntity {
         return dateTime;
     }
 
-    public Set<DishInEating> getDishes() {
+    public Map<UUID, Integer> getDishes() {
         return dishes;
     }
 }

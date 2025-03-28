@@ -20,12 +20,13 @@ public class DailyReportQuery {
     public DailyReport getData(UUID personId, LocalDate date) {
         String sql =
                 """
-                    SELECT sum(d.caloric_content * die.cnt) AS caloriesReceived, count(DISTINCT e.*) AS eating
+                    SELECT sum(d.caloric_content * (e.dishes -> (d.id::text))::int) AS caloriesReceived,
+                           count(DISTINCT e.*)                                      AS eating
                     FROM eating e
-                             INNER JOIN dish_in_eating die ON e.id = die.eating_id
-                             INNER JOIN dish d on die.dish_id = d.id
-                    WHERE person_id = :personId\s
-                      AND date(date_time) = :date\s
+                             CROSS JOIN LATERAL jsonb_object_keys(e.dishes) AS die
+                             INNER JOIN dish d ON die = d.id::text
+                    WHERE person_id = :personId
+                      AND date(date_time) = :date
                     GROUP BY person_id, date(date_time)
                 """;
         var result = jdbcTemplate.query(
