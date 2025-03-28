@@ -15,18 +15,24 @@ public class Dish implements ResourceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
+
     @NotBlank(message = "Dish title is required")
     private String title;
     @Positive
+
     @Max(value = Integer.MAX_VALUE)
+    @Positive
     private int caloricContent;
+
     // todo: switch lang
     @Positive
     @Max(value = Integer.MAX_VALUE)
     private int proteins;
+
     @Positive
     @Max(value = Integer.MAX_VALUE)
     private int fats;
+
     @Positive
     @Max(value = Integer.MAX_VALUE)
     private int carbs;
