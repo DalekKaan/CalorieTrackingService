@@ -30,14 +30,14 @@ public abstract class CommonResourceController<E extends ResourceEntity> impleme
 
     @Override
     public PagedModel<E> getAll(Pageable pageable) {
-        Page<E> people = repository.findAll(pageable);
-        return new PagedModel<>(people);
+        Page<E> entities = repository.findAll(pageable);
+        return new PagedModel<>(entities);
     }
 
     @Override
     public E getOne(@PathVariable UUID id) {
-        Optional<E> personOptional = repository.findById(id);
-        return personOptional.orElseThrow(() ->
+        Optional<E> entityOptional = repository.findById(id);
+        return entityOptional.orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "Entity with id `%s` not found".formatted(id)));
     }
 
@@ -48,41 +48,40 @@ public abstract class CommonResourceController<E extends ResourceEntity> impleme
 
     @Override
     public E create(@RequestBody E person) {
-        // todo: add validation
         return repository.save(person);
     }
 
     @Override
     public E patch(@PathVariable UUID id, @RequestBody JsonNode patchNode) throws IOException {
-        E person = repository.findById(id).orElseThrow(() ->
+        E entity = repository.findById(id).orElseThrow(() ->
                 new ResponseStatusException(HttpStatus.NOT_FOUND, "Entity with id `%s` not found".formatted(id)));
 
-        objectMapper.readerForUpdating(person).readValue(patchNode);
+        objectMapper.readerForUpdating(entity).readValue(patchNode);
 
-        return repository.save(person);
+        return repository.save(entity);
     }
 
     @Override
     public List<UUID> patchMany(@RequestParam List<UUID> ids, @RequestBody JsonNode patchNode) throws IOException {
-        Collection<E> people = repository.findAllById(ids);
+        Collection<E> entities = repository.findAllById(ids);
 
-        for (E person : people) {
-            objectMapper.readerForUpdating(person).readValue(patchNode);
+        for (E entity : entities) {
+            objectMapper.readerForUpdating(entity).readValue(patchNode);
         }
 
-        List<E> resultPeople = repository.saveAll(people);
-        return resultPeople.stream()
+        List<E> resultEntities = repository.saveAll(entities);
+        return resultEntities.stream()
                 .map(E::getId)
                 .toList();
     }
 
     @Override
     public E delete(@PathVariable UUID id) {
-        E person = repository.findById(id).orElse(null);
-        if (person != null) {
-            repository.delete(person);
+        E entity = repository.findById(id).orElse(null);
+        if (entity != null) {
+            repository.delete(entity);
         }
-        return person;
+        return entity;
     }
 
     @Override

@@ -36,11 +36,17 @@ public class Person implements ResourceEntity {
     @EnumContains(enumClass = Gender.class, message = "Person gender must be `MALE` or `FEMALE`")
     private Gender gender;
 
+    /**
+     * Person weight (kg)
+     */
     @NotNull(message = "Person weight is required")
     @Min(value = 20, message = "Person weight mint be grater than {value}")
     @Max(value = 250, message = "Person weight mint be lower than {value}")
     private int weight;
 
+    /**
+     * Person height (sm)
+     */
     @NotNull(message = "Person height is required")
     @Min(value = 20, message = "Person height mint be grater than {value}")
     @Max(value = 250, message = "Person height mint be lower than {value}")

@@ -12,6 +12,11 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Converter to present Map as JSON database field
+ * @param <K> json key type (must be serializable)
+ * @param <V> json value type
+ */
 @Converter
 public abstract class CommonHashMapConverter<K, V> implements AttributeConverter<Map<K, V>, String> {
 

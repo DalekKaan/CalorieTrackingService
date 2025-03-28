@@ -23,7 +23,6 @@ import static org.springframework.http.HttpStatus.BAD_REQUEST;
 public class RestExceptionHandler extends ResponseEntityExceptionHandler {
 
 
-
     @ExceptionHandler(ResponseStatusException.class)
     protected ResponseEntity<Object> handleResponseStatusException(
             ResponseStatusException ex) {
