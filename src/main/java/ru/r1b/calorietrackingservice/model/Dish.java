@@ -20,21 +20,20 @@ public class Dish implements ResourceEntity {
     private String title;
     @Positive
 
-    @Max(value = Integer.MAX_VALUE)
-    @Positive
+    @Positive(message = "Caloric content must be a positive value")
+    @Max(value = Integer.MAX_VALUE, message = "Caloric content must not exceed " + Integer.MAX_VALUE)
     private int caloricContent;
 
-    // todo: switch lang
-    @Positive
-    @Max(value = Integer.MAX_VALUE)
+    @Positive(message = "Proteins must be a positive value")
+    @Max(value = Integer.MAX_VALUE, message = "Proteins must not exceed " + Integer.MAX_VALUE)
     private int proteins;
 
-    @Positive
-    @Max(value = Integer.MAX_VALUE)
+    @Positive(message = "Fats must be a positive value")
+    @Max(value = Integer.MAX_VALUE, message = "Fats must not exceed " + Integer.MAX_VALUE)
     private int fats;
 
-    @Positive
-    @Max(value = Integer.MAX_VALUE)
+    @Positive(message = "Cabs must be a positive value")
+    @Max(value = Integer.MAX_VALUE, message = "Cabs must not exceed " + Integer.MAX_VALUE)
     private int carbs;
 
     public UUID getId() {
