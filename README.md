@@ -1,3 +1,5 @@
+> **_Для ревью:_** Я добавил комментарии на русском, которые объясняют некоторые мои решения.
+
 # Calorie tracking service
 This is testing task for 1221Systems job interview.
 

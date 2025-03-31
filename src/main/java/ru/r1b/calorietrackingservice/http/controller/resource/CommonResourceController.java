@@ -17,6 +17,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 public abstract class CommonResourceController<E extends ResourceEntity> implements ResourceController<E> {
+    // для ревью:
+    // контроллер сгенерирован при помощи плагина для Intellij Idea "Amplicode" просто, чтобы сэкономить время
 
     private final JpaRepository<E, UUID> repository;
 

@@ -15,6 +15,9 @@ import java.util.UUID;
 
 @Entity
 public class Eating implements ResourceEntity {
+    // для ревью:
+    // я знаю что здесь для сообщений об ошибках следовало использовать файлы локализации,
+    // но в рамках тестового задания реши обойтись прямым указанием сообщения
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
@@ -27,6 +30,10 @@ public class Eating implements ResourceEntity {
     @DateTimeFormat( pattern="yyyy-MM-dd HH:mm:ss")
     private LocalDateTime dateTime = LocalDateTime.now();
 
+    // для ревью:
+    // хранение связи "многие-ко-многим" в поле json, как правило, является лучше использования для этого отдельной
+    // связующей таблицы, так как убирает лишнее сканирование при запросах, особенно с учётом широких возможностей для
+    // работы с JSON конкретно у PostgreSQL
     @Convert(converter = EntityCountConverter.class)
     @Column(columnDefinition = "jsonb")
     @ColumnTransformer(write = "?::jsonb")

@@ -18,6 +18,10 @@ public class DailyReportQuery {
     }
 
     public DailyReport getData(UUID personId, LocalDate date) {
+        // для ревью:
+        // я знаю что можно использовать аннотацию @Query в репозитории, но я считаю что для отчётов хорошей практикой
+        // будет именно использование отдельного класса для каждого конкретного запроса, так как запросы в них могут быть
+        // достаточно большими и сложными, в то время как репозиторий скорее должен работать только со своей сущностью
         String sql =
                 """
                     SELECT sum(d.caloric_content * (e.dishes -> (d.id::text))::int) AS caloriesReceived,

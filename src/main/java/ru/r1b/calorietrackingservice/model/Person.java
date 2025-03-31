@@ -14,6 +14,9 @@ import java.util.UUID;
 
 @Entity
 public class Person implements ResourceEntity {
+    // для ревью:
+    // я знаю что здесь для сообщений об ошибках следовало использовать файлы локализации,
+    // но в рамках тестового задания реши обойтись прямым указанием сообщения
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
@@ -65,6 +68,9 @@ public class Person implements ResourceEntity {
     }
 
     public Person(String name, String email, LocalDate dayOfBorn, Gender gender, int weight, int height, Purpose purpose, PhysicalActivity activity) {
+        // для ревью:
+        // данный конструктор использован только для тестирования, но для самого приложения он не создаёт никаких проблем,
+        // поэтому я решил его оставить чтобы не использовать сеттеры или рефлексию
         this.name = name;
         this.email = email;
         this.dayOfBorn = dayOfBorn;

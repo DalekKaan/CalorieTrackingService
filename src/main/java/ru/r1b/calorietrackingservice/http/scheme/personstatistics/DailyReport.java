@@ -1,6 +1,9 @@
 package ru.r1b.calorietrackingservice.http.scheme.personstatistics;
 
 public final class DailyReport {
+    // для ревью:
+    // использовал именно класс вместо record в качестве DTO так как с ним нативно работает BeanPropertyRowMapper из-за
+    // чего внешний код выглядит лаконичнее, но в целом считаю обе структуры пригодными для использования как DTO
     private double caloriesReceived;
     private int eating;
 

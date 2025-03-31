@@ -22,6 +22,9 @@ public class HarrisBenedictCalculator implements Calculator {
 
     @Override
     public int calculate(Person person) {
+        // для ревью:
+        // я решил не выносить магические числа в константы, так как они являются сутью самого калькулятора,
+        // встречаются единожды, только в нём и вря тли будут изменены
         double result;
         if (person.getGender() == Gender.MALE) {
             result = 66.473 + 13.752 * person.getWeight() + 5.003 * person.getHeight() - 6.755 * getAge(person);

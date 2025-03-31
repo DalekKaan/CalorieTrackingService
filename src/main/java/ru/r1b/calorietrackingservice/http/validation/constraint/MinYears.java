@@ -15,6 +15,9 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Documented
 @Repeatable(MinYears.List.class)
 public @interface MinYears {
+    // для ревью:
+    // я знаю что здесь следовало использовать файлы локализации,
+    // но рамках тестового задания реши обойтись прямым указанием сообщения
     String message() default "the date must be at least {minYears} years in the past";
     int minYears();
     Class<?>[] groups() default { };

@@ -17,6 +17,11 @@ import java.time.LocalDate;
 @RestController()
 @RequestMapping("/person/statistics")
 public class PersonStaticsController {
+    // для ревью:
+    // согласно заданию реализация этих эндпоинтов не требовалась, но я решил это сделать так как это не
+    // сложно ввиду отсутствия чётких требований к схеме ответа
+
+
     private final PersonService service;
 
     public PersonStaticsController(PersonService personService) {
